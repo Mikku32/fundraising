@@ -122,7 +122,7 @@ class ProfilePage extends StatelessWidget {
                 onPress: ()  => showDialog(context: context, 
                 builder: (context)=>AlertDialog(
                   title: Text('Information'),
-                  content: Text('Detailed info will be shown here'),
+                  content: Text("Detailed info will be shown here :)"),
                 )),
                 color: Colors.black,
                 endIcon: true,
