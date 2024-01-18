@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fundraising/Widgets/diologue_widget.dart';
 import 'package:fundraising/models/project_dummy.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:quickalert/quickalert.dart';
@@ -237,19 +238,24 @@ class _DonationPageState extends State<DonationPage> {
                       style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.green),
                       onPressed: (){
-                        QuickAlert.show(
-                          context: context,
-                          type: QuickAlertType.success,
-                          text: 'Payment is confirmed !!!',
-                          title: 'Success',
-                          showCancelBtn: false,
-                          confirmBtnText: 'Close',
-                          confirmBtnTextStyle: GoogleFonts.kdamThmorPro(
-                            color: Colors.white
-                          ),
-                          confirmBtnColor: Colors.green,
-                          autoCloseDuration: Duration(seconds: 10),
-                        );
+                        showDialog(context: context,
+                        builder: (context){
+                          return const CustomDialogue();
+                          });
+                          
+                        // QuickAlert.show(
+                        //   context: context,
+                        //   type: QuickAlertType.success,
+                        //   text: 'Payment is confirmed !!!',
+                        //   title: 'Success',
+                        //   showCancelBtn: false,
+                        //   confirmBtnText: 'Close',
+                        //   confirmBtnTextStyle: GoogleFonts.kdamThmorPro(
+                        //     color: Colors.white
+                        //   ),
+                        //   confirmBtnColor: Colors.green,
+                        //   autoCloseDuration: Duration(seconds: 10),
+                        // );
                       } ,
                 
                       child: Text('Confirm Payment',
