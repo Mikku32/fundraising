@@ -181,7 +181,12 @@ class CaseCardDescription extends StatelessWidget {
                       
                 )));
                       },
-                      child: Text('Donate'))),
+                      child: Text('Donate',
+                      style: GoogleFonts.kdamThmorPro(
+                        fontSize: 15,
+                        color: Colors.white
+                      ),
+                      ))),
             )
           ],
         ),

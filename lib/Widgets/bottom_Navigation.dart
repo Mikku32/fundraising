@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:fundraising/Pages/favPage.dart';
-import 'package:fundraising/Pages/firstPage.dart';
+import 'package:fundraising/Pages/home_page.dart';
 import 'package:fundraising/Pages/profilepage.dart';
-import 'package:fundraising/Pages/searchPage.dart';
+import 'package:fundraising/Pages/search_page.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
 class NavigationPage extends StatefulWidget {
@@ -14,10 +14,10 @@ class NavigationPage extends StatefulWidget {
 
 class _NavigationPageState extends State<NavigationPage> {
   
-  int _selectedIndex=0;
+  int _selectedPage=0;
 
   List<Widget> _screens = [
-    Page1(),
+    HomePage(),
     FavPAge(),
     SearchPage(),
     ProfilePage()
@@ -28,7 +28,7 @@ class _NavigationPageState extends State<NavigationPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _screens[_selectedIndex],
+      body: _screens[_selectedPage],
        bottomNavigationBar: GNav(
         
         
@@ -63,7 +63,7 @@ class _NavigationPageState extends State<NavigationPage> {
       ] ,
       onTabChange: (i) {
         setState(() {
-          _selectedIndex=i;
+          _selectedPage=i;
         });
       },
        

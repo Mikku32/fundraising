@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fundraising/models/project_dummy.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 
 class DonationPage extends StatelessWidget {
@@ -64,7 +65,7 @@ final Project project;
                         children: [
                           Text(
                             project.title,
-                            style: TextStyle(
+                            style: GoogleFonts.robotoSlab(
                               fontSize: 15,
                               fontWeight: FontWeight.bold,
                               color: Colors.black,
@@ -75,10 +76,11 @@ final Project project;
                           ),
                         Row(
                           children: [
-                            Icon(Icons.access_time_outlined),
+                            Icon(Icons.access_time_outlined,size: 20  ,),
                             SizedBox(width: 5,),
-                            Text('30 days remaining',
-                            style: TextStyle(
+                            Text(project.remaining,
+                            style: GoogleFonts.robotoSlab(
+                              fontSize: 15,
                               fontWeight: FontWeight.w500,
                               color: Colors.blue
                             ),),
@@ -97,14 +99,14 @@ final Project project;
                              children: [
                                Text(
                                 'Target : ',
-                                style: TextStyle(
+                                style: GoogleFonts.robotoSlab(
                                   fontSize: 15,
                                   fontWeight: FontWeight.bold,
                                   color: Colors.black,
                                 ),
                           ),
                           Text('\$ ${project.target}',
-                              style: TextStyle(
+                              style: GoogleFonts.robotoSlab(
                                 fontSize: 10,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.black,
@@ -121,7 +123,7 @@ final Project project;
                             children: [
                               Text(
                                 'Raised so far: ',
-                                style: TextStyle(
+                                style: GoogleFonts.robotoSlab(
                                   fontSize: 15,
                                   fontWeight: FontWeight.bold,
                                   color: Colors.black,
@@ -129,7 +131,7 @@ final Project project;
                               ),
                                
                           Text('\$ ${project.donation}',
-                              style: TextStyle(
+                              style:GoogleFonts.robotoSlab(
                                 fontSize: 10,
                                 fontWeight: FontWeight.bold,
                                 color: Color.fromARGB(251, 137, 14, 6),
@@ -151,10 +153,10 @@ final Project project;
           height: 20,
               ),
               Text('Payment Information ',
-                    style: TextStyle(
-                      fontSize: 18,
-                       fontWeight: FontWeight.bold
-                       )
+                    style: GoogleFonts.kdamThmorPro(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold
+                    )
                ),
         
               SizedBox(
@@ -165,7 +167,11 @@ final Project project;
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(15),
             ),
-            hintText: 'Referal Number :  DNS 0000 000 00'
+            hintText: 'Referal Number :  DNS 0000 000 00',
+            hintStyle: GoogleFonts.robotoSlab(
+              fontSize: 15,
+              fontWeight: FontWeight.w400
+            ),
             ),
                ),  
                
@@ -177,7 +183,11 @@ final Project project;
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(15),
             ),
-            hintText: 'Payement Method : UPI'
+            hintText: 'Payement Method : UPI',
+             hintStyle: GoogleFonts.robotoSlab(
+              fontSize: 15,
+              fontWeight: FontWeight.w400
+            ),
             ),
                ), 
            SizedBox(
@@ -188,7 +198,11 @@ final Project project;
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(15),
             ),
-            hintText: 'Upi id'
+            hintText: 'Upi id',
+             hintStyle: GoogleFonts.robotoSlab(
+              fontSize: 15,
+              fontWeight: FontWeight.w400
+            ),
             ),
                ), 
            SizedBox(
@@ -199,7 +213,11 @@ final Project project;
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(15),
             ),
-            hintText: 'Amount'
+            hintText: 'Amount',
+             hintStyle: GoogleFonts.robotoSlab(
+              fontSize: 15,
+              fontWeight: FontWeight.w400
+            ),
             ),
                ),  
                
@@ -214,10 +232,19 @@ final Project project;
                           backgroundColor: Colors.green),
                       onPressed: () => showDialog(context: context, 
                 builder: (context)=>AlertDialog(
-                  title: Text('Confirm Payment'),
-                  content: Text('Payment will be confirmed'),
+                  title: Text('Confirm Payment',
+                  style: GoogleFonts.kdamThmorPro(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold
+                  )),
+                  content: Text('Payment is confirmed'),
                 )),
-                      child: Text('Confirm Payment'))),
+                      child: Text('Confirm Payment',
+                      style: GoogleFonts.kdamThmorPro(
+                        fontSize: 15,
+                        color: Colors.white
+                      ),
+                      ))),
             )  
           ],
         ),

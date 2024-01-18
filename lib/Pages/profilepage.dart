@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fundraising/Pages/edit_profile_page.dart';
 import 'package:fundraising/Pages/help_page.dart';
 import 'package:fundraising/Pages/settings_page.dart';
-import 'package:fundraising/Widgets/bottom_Navigation.dart';
+import 'package:fundraising/Widgets/bottom_navigation.dart';
 import 'package:fundraising/Widgets/profile_menu.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';

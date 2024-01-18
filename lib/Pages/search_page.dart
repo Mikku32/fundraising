@@ -3,11 +3,12 @@
 import 'package:flutter/material.dart';
 import 'package:fundraising/Pages/case_card_description.dart';
 import 'package:fundraising/models/project_dummy.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 
 
 class SearchPage extends StatefulWidget {
-     SearchPage ({
+    const SearchPage ({
       super.key,   });
 
 
@@ -46,8 +47,16 @@ class _SearchPageState extends State<SearchPage> {
             child: TextField(
               onChanged: _filterProjects,
               decoration: InputDecoration(
-                labelText: "Search",
-                prefixIcon: Icon(Icons.search)
+                hintText: 'Search....',
+                hintStyle: GoogleFonts.robotoSlab(
+                  fontSize: 15,
+                  fontWeight: FontWeight.w500
+                ),
+                prefixIcon: Icon(Icons.search),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(20),
+                  
+                )
               ),
             ),
           ),
@@ -56,8 +65,17 @@ class _SearchPageState extends State<SearchPage> {
               itemCount: filteredProjects.length,
               itemBuilder: (context, index) {
                 return ListTile(
-                  title:  Text(filteredProjects[index].title),
-                  subtitle: Text(filteredProjects[index].author),
+                  title:  Text(filteredProjects[index].title, 
+                  style: GoogleFonts.robotoSlab(
+                    fontSize: 15,
+                    fontWeight: FontWeight.bold
+                    ),),
+                  subtitle: Text(filteredProjects[index].author,
+                  style: GoogleFonts.robotoSlab(
+                    fontSize: 10,
+                    fontWeight: FontWeight.w400
+                  ),
+                  ),
           
                   onTap: () {
                   Navigator.push(context,

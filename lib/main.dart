@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 
 
-import 'package:fundraising/Widgets/bottom_Navigation.dart';
+import 'package:fundraising/Widgets/bottom_navigation.dart';
 
 
 void main() {

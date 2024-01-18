@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'package:fundraising/Widgets/bottom_Navigation.dart';
+import 'package:fundraising/Widgets/bottom_navigation.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 
