@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:fundraising/models/project_dummy.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:quickalert/quickalert.dart';
 
 
-class DonationPage extends StatelessWidget {
+class DonationPage extends StatefulWidget {
   const DonationPage({super.key,
   required this.project
   
@@ -11,6 +12,11 @@ class DonationPage extends StatelessWidget {
   });
 final Project project;
 
+  @override
+  State<DonationPage> createState() => _DonationPageState();
+}
+
+class _DonationPageState extends State<DonationPage> {
   @override
   Widget build(BuildContext context) {
     
@@ -47,9 +53,9 @@ final Project project;
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(20),
                       child: Hero(
-                        tag: project.imgurl,
+                        tag: widget.project.imgurl,
                         child: Image.asset(
-                          project.imgurl,
+                          widget.project.imgurl,
                           height: double.maxFinite,
                           width: double.maxFinite,
                           fit: BoxFit.fill,
@@ -64,7 +70,7 @@ final Project project;
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            project.title,
+                            widget.project.title,
                             style: GoogleFonts.robotoSlab(
                               fontSize: 15,
                               fontWeight: FontWeight.bold,
@@ -78,7 +84,7 @@ final Project project;
                           children: [
                             Icon(Icons.access_time_outlined,size: 20  ,),
                             SizedBox(width: 5,),
-                            Text(project.remaining,
+                            Text(widget.project.remaining,
                             style: GoogleFonts.robotoSlab(
                               fontSize: 15,
                               fontWeight: FontWeight.w500,
@@ -105,7 +111,7 @@ final Project project;
                                   color: Colors.black,
                                 ),
                           ),
-                          Text('\$ ${project.target}',
+                          Text('\$ ${widget.project.target}',
                               style: GoogleFonts.robotoSlab(
                                 fontSize: 10,
                                 fontWeight: FontWeight.bold,
@@ -130,7 +136,7 @@ final Project project;
                                 ),
                               ),
                                
-                          Text('\$ ${project.donation}',
+                          Text('\$ ${widget.project.donation}',
                               style:GoogleFonts.robotoSlab(
                                 fontSize: 10,
                                 fontWeight: FontWeight.bold,
@@ -230,15 +236,22 @@ final Project project;
                   child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.green),
-                      onPressed: () => showDialog(context: context, 
-                builder: (context)=>AlertDialog(
-                  title: Text('Confirm Payment',
-                  style: GoogleFonts.kdamThmorPro(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold
-                  )),
-                  content: Text('Payment is confirmed'),
-                )),
+                      onPressed: (){
+                        QuickAlert.show(
+                          context: context,
+                          type: QuickAlertType.success,
+                          text: 'Payment is confirmed !!!',
+                          title: 'Success',
+                          showCancelBtn: false,
+                          confirmBtnText: 'Close',
+                          confirmBtnTextStyle: GoogleFonts.kdamThmorPro(
+                            color: Colors.white
+                          ),
+                          confirmBtnColor: Colors.green,
+                          autoCloseDuration: Duration(seconds: 10),
+                        );
+                      } ,
+                
                       child: Text('Confirm Payment',
                       style: GoogleFonts.kdamThmorPro(
                         fontSize: 15,
